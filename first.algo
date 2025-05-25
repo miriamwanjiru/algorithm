@@ -1,0 +1,26 @@
+ALGORITHM StringAnalysis;
+VAR
+    length,word-count,vowel-count:INTEGER;
+    vowel:STRING;
+    character:CHAR;
+BEGIN
+    length:=0;
+    word-count:=1;
+    vowel-count:=0;
+    vowels:='aeiouAEIOU';
+    write('Enter a sentence character by character.End with a dot:');
+    REPEAT
+        write('Enter next character:');
+        readln(character);
+        length:= length+1;
+        IF (character=' ') THEN
+            word-count:= word-count+1
+        END_IF
+        IF (character=vowels) THEN
+            vowel-count:= vowel-count+1
+        END_IF
+    UNTIL (character='.')
+    writeln('length of the sentence:',length);
+    writeln('number of words:',word-count);
+    writeln('number of vowels:',vowel-count);
+END
